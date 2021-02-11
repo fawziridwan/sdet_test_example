@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-02-11T13:40:57.579Z",
+    "end": "2021-02-11T13:40:58.443Z",
+    "duration": 864,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0218ff08-28a5-4ec0-b29f-9f4e532300c4",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e952f19e-0b33-4dc2-ba3c-f1eafbb15b38",
+          "title": "OMDB Movie List",
+          "fullFile": "C:\\code\\sdet_test_example\\api\\tests\\get_user-test.js",
+          "file": "\\api\\tests\\get_user-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "@get As a User, I want to be able to get OMDB Movie list",
+              "fullTitle": "OMDB Movie List @get As a User, I want to be able to get OMDB Movie list",
+              "timedOut": false,
+              "duration": 306,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getMovieList(apiKey, keySearch);\nassert(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "7df4bdd6-05eb-4205-bbf1-1e6084cd0ceb",
+              "parentUUID": "e952f19e-0b33-4dc2-ba3c-f1eafbb15b38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "@get As a User, I should got error message when I send request without key of search",
+              "fullTitle": "OMDB Movie List @get As a User, I should got error message when I send request without key of search",
+              "timedOut": false,
+              "duration": 175,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getMovieList(apiKey, '');\nassert(response.status).to.equal(200, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Something went wrong.');",
+              "err": {
+                "message": "AssertionError: expected 'Incorrect IMDb ID.' to equal 'Something went wrong.'",
+                "estack": "AssertionError: expected 'Incorrect IMDb ID.' to equal 'Something went wrong.'\n    at Context.<anonymous> (api\\tests\\get_user-test.js:29:34)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+                "diff": "- Incorrect IMDb ID.\n+ Something went wrong.\n"
+              },
+              "uuid": "8b680bb6-8a4e-4410-9ca6-72a3cf66468c",
+              "parentUUID": "e952f19e-0b33-4dc2-ba3c-f1eafbb15b38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "@get As a User, I should got error message when I send request without key of search",
+              "fullTitle": "OMDB Movie List @get As a User, I should got error message when I send request without key of search",
+              "timedOut": false,
+              "duration": 209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getMovieList(apiKey, '@&*');\nassert(response.status).to.equal(200, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Too many results.');",
+              "err": {},
+              "uuid": "83fe5d62-c927-4fea-9df9-2e00f4b83862",
+              "parentUUID": "e952f19e-0b33-4dc2-ba3c-f1eafbb15b38",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "@get As a User, I should got error 401 when I send request with invalid API Key",
+              "fullTitle": "OMDB Movie List @get As a User, I should got error 401 when I send request with invalid API Key",
+              "timedOut": false,
+              "duration": 163,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await page.getMovieList(invalidApiKey, keySearch);\nassert(response.status).to.equal(401, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Invalid API key!');",
+              "err": {},
+              "uuid": "3416547c-9a4b-4e2e-9b5c-8bf2cf44e9de",
+              "parentUUID": "e952f19e-0b33-4dc2-ba3c-f1eafbb15b38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7df4bdd6-05eb-4205-bbf1-1e6084cd0ceb",
+            "83fe5d62-c927-4fea-9df9-2e00f4b83862",
+            "3416547c-9a4b-4e2e-9b5c-8bf2cf44e9de"
+          ],
+          "failures": [
+            "8b680bb6-8a4e-4410-9ca6-72a3cf66468c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 853,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 180000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/mochawesome/"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
