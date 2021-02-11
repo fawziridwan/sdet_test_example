@@ -1,0 +1,13 @@
+{
+  "name": "sdet_test_example",
+  "version": "0.0.1",
+  "description": "SDET Test Example",
+  "main": "index.js",
+  "author": "Fawzi Ridwan",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.2.1"
+  }
+}
