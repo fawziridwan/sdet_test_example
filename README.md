@@ -1,1 +1,1 @@
-# sdet_test_example
+# SDET Testing Example
